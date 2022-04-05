@@ -4,6 +4,7 @@
 
 Engineering Senior Design project: Adding arduino sensors to white cane to add LED and possibly vibration to white cane. (sent prof. rosen email about this)
 Some kind of game like a version of wordle or hangman.
+Mad libs
 
 ## If you plan to collaborate with one or two classmates, what are their names?
 
