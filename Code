@@ -1,0 +1,76 @@
+const int trigPin = 4;
+const int trigPin2= 5;
+const int trigPin3= 9;
+const int echoPin = 6;
+const int echoPin2 = 7;
+const int echoPin3 = 10;
+int LED = 2;
+int LED2 = 3;
+int LED3 = 8;
+long duration;
+int distance;
+void setup()
+{
+pinMode (LED, OUTPUT);
+pinMode (trigPin, OUTPUT);
+pinMode (echoPin, INPUT);
+pinMode (LED2, OUTPUT);
+pinMode (trigPin2, OUTPUT);
+pinMode (echoPin2, INPUT);
+pinMode (LED3, OUTPUT);
+pinMode (trigPin3, OUTPUT);
+pinMode (echoPin3, INPUT);
+Serial.begin (9600);
+}
+
+void loop()
+//Blue
+{
+  digitalWrite (trigPin, LOW);
+  delayMicroseconds(1);
+  digitalWrite (trigPin, HIGH);
+  delayMicroseconds(15);
+  digitalWrite (trigPin, LOW);
+  duration = pulseIn (echoPin, HIGH);
+  distance = duration*0.0133/2;
+ if (distance <= 15)
+ {
+  digitalWrite (LED, HIGH);
+ }
+ else
+ {
+  digitalWrite (LED, LOW);
+ }
+ //Yellow
+  digitalWrite (trigPin2, LOW);
+  delayMicroseconds(1);
+  digitalWrite (trigPin2, HIGH);
+  delayMicroseconds(15);
+  digitalWrite (trigPin2, LOW);
+  duration = pulseIn (echoPin2, HIGH);
+  distance = duration*0.0133/2;
+ if (distance <= 15)
+ {
+  digitalWrite (LED2, HIGH);
+ }
+ else
+ {
+  digitalWrite (LED2, LOW);
+ }
+ //Red
+ digitalWrite (trigPin3, LOW);
+  delayMicroseconds(1);
+  digitalWrite (trigPin3, HIGH);
+  delayMicroseconds(15);
+  digitalWrite (trigPin3, LOW);
+  duration = pulseIn (echoPin3, HIGH);
+  distance = duration*0.0133/2;
+ if (distance <= 50)
+ {
+  digitalWrite (LED3, HIGH);
+ }
+ else
+ {
+  digitalWrite (LED3, LOW);
+ }
+}
